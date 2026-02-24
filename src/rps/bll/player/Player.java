@@ -7,6 +7,7 @@ import rps.bll.game.Result;
 
 //Java imports
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Example implementation of a player.
@@ -16,7 +17,11 @@ import java.util.ArrayList;
 public class Player implements IPlayer {
 
     private String name;
+
     private PlayerType type;
+
+
+    public final Random random = new Random();
 
     /**
      * @param name
@@ -41,6 +46,7 @@ public class Player implements IPlayer {
 
     /**
      * Decides the next move for the bot...
+     *
      * @param state Contains the current game state including historic moves/results
      * @return Next move
      */
@@ -111,11 +117,15 @@ public class Player implements IPlayer {
         }
 
 
+
+
         Move possibleMoves[] = Move.values();
         Move randomMove = possibleMoves[random.nextInt(possibleMoves.length)];
         return randomMove;
 
 
-    }
+
+
+
     }
 }
