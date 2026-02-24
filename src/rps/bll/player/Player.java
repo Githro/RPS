@@ -49,7 +49,73 @@ public class Player implements IPlayer {
         //Historic data to analyze and decide next move...
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
 
+
         //Implement better AI here...
-        return Move.Rock;
+
+        // AI code that checks if the user enters the same move 3 times in a row and then the computer counters that move in the next round
+
+
+        if (results.size() < 3){
+            Move possibleMoves[] = Move.values();
+            Move randomMove = possibleMoves[random.nextInt(possibleMoves.length)];
+            return randomMove;
+
+        }
+        Result lastRound = results.get(results.size() - 1);
+        Result secondLastRound = results.get(results.size() - 2);
+        Result thirdLastRound = results.get(results.size() - 3);
+
+        Move lastRoundHumanMove;
+        if (lastRound.getWinnerPlayer().getPlayerType() == PlayerType.Human) {
+            lastRoundHumanMove = lastRound.getWinnerMove();
+        } else {
+            lastRoundHumanMove = lastRound.getLoserMove();
+        }
+
+
+        Move secondLastRoundHumanMove;
+        if (secondLastRound.getWinnerPlayer().getPlayerType() == PlayerType.Human) {
+            secondLastRoundHumanMove = secondLastRound.getWinnerMove();
+        } else {
+            secondLastRoundHumanMove = secondLastRound.getLoserMove();
+        }
+
+        Move thirdLastRoundHumanMove;
+        if (thirdLastRound.getWinnerPlayer().getPlayerType() == PlayerType.Human) {
+            thirdLastRoundHumanMove = thirdLastRound.getWinnerMove();
+        } else {
+            thirdLastRoundHumanMove = thirdLastRound.getLoserMove();
+        }
+
+
+        if (lastRoundHumanMove == Move.Paper && secondLastRoundHumanMove == Move.Paper && thirdLastRoundHumanMove == Move.Paper ){
+            results.clear();
+            System.out.println("Countering move paper chosen multiple times, the AI will now return scissor");
+            return Move.Scissor;
+
+
+        }
+
+        else if (lastRoundHumanMove == Move.Rock && secondLastRoundHumanMove == Move.Rock && thirdLastRoundHumanMove == Move.Rock ){
+            results.clear();
+            System.out.println("Countering move Rock chosen multiple times, the AI will now return Paper");
+
+            return Move.Paper;
+        }
+
+        else if (lastRoundHumanMove == Move.Scissor && secondLastRoundHumanMove == Move.Scissor && thirdLastRoundHumanMove == Move.Scissor ){
+            results.clear();
+            System.out.println("Countering move Scissor chosen multiple times, the AI will now return Rock");
+
+            return Move.Rock;
+        }
+
+
+        Move possibleMoves[] = Move.values();
+        Move randomMove = possibleMoves[random.nextInt(possibleMoves.length)];
+        return randomMove;
+
+
+    }
     }
 }
