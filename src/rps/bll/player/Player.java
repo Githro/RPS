@@ -117,8 +117,6 @@ public class Player implements IPlayer {
         }
 
 
-
-
         Move possibleMoves[] = Move.values();
         Move randomMove = possibleMoves[random.nextInt(possibleMoves.length)];
         return randomMove;

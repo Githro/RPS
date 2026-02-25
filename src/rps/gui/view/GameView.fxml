@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
+<AnchorPane prefHeight="476.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rps.gui.controller.GameViewController">
    <children>
       <Label layoutX="71.0" layoutY="35.0" prefHeight="20.0" prefWidth="458.0" text="Can you guess the winning option, or will you be left looking like a fool?!">
          <font>
@@ -45,25 +45,44 @@
             <Button layoutX="45.0" layoutY="106.0" mnemonicParsing="false" onAction="#btnScissor" text="Scissor" />
          </children>
       </Pane>
-      <Label fx:id="lblResult" layoutX="71.0" layoutY="254.0" prefHeight="50.0" prefWidth="458.0" text="Result of the match:" wrapText="true">
+      <Label fx:id="lblResult" layoutX="167.0" layoutY="278.0" prefHeight="132.0" prefWidth="274.0" style="-fx-background-radius: 10; -fx-border-color: #080156;" text="         Result of the match:" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblPlayerOneScore" layoutX="14.0" layoutY="335.0" prefHeight="18.0" prefWidth="142.0" text="Player 1 score:" wrapText="true">
+      <Label fx:id="lblPlayerHumanScore" layoutX="14.0" layoutY="444.0" prefHeight="18.0" prefWidth="142.0" text="Human Score: " wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblPlayerTwoScore" layoutX="443.0" layoutY="335.0" prefHeight="18.0" prefWidth="142.0" text="Player 2 score:" wrapText="true">
+      <Label fx:id="lblPlayerAIScore" layoutX="466.0" layoutY="444.0" prefHeight="20.0" prefWidth="112.0" text="AI Score: " wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblRoundNumber" layoutX="229.0" layoutY="335.0" prefHeight="18.0" prefWidth="142.0" text="Round Number: " wrapText="true">
+      <Label fx:id="lblRoundNumber" layoutX="244.0" layoutY="444.0" prefHeight="18.0" prefWidth="142.0" text="Round Number: " wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Pane layoutX="394.0" layoutY="238.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="26.0">
+               <image>
+                  <Image url="@../../../Resources/AIPicture.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="244.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="200.0" fitWidth="163.0" layoutX="-18.0">
+               <image>
+                  <Image url="@../../../Resources/HumanPicture.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
