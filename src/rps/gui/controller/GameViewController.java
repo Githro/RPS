@@ -35,6 +35,7 @@ public class GameViewController implements Initializable {
     public Label lblPlayerAIScore;
     public Label lblRoundNumber;
 
+
     public int AIScore = 0;
     public int HumanScore = 0;
     public int roundNumber = 0;
@@ -91,11 +92,14 @@ public class GameViewController implements Initializable {
         } else { aiMove = result.getLoserMove();
         }
         if (result.getWinnerMove() == result.getLoserMove()){
-            lblResult.setText("It's a tie, both chose " + result.getWinnerMove());
+
+            lblResult.setText(" Human move: " + playerMove + "\n AI Move: " + aiMove + "\n The result is a tie");
             return;
         }
 
         else {
+
+
             lblResult.setText(" Human move: " + playerMove + "\n AI Move: " + aiMove + "\n Winner of the match: " + result.getWinnerPlayer().getPlayerName());
 
 

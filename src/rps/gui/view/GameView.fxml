@@ -74,9 +74,9 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="14.0" layoutY="244.0" prefHeight="200.0" prefWidth="200.0">
+      <Pane layoutX="14.0" layoutY="244.0" prefHeight="179.0" prefWidth="136.0">
          <children>
-            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="179.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="200.0" fitWidth="163.0" layoutX="-18.0">
                <image>
                   <Image url="@../../../Resources/HumanPicture.png" />
